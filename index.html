@@ -14,18 +14,19 @@
         <div class="class1">
 
             <div><h1>RGB to Hexadecimal</h1></div>
-            <form>
-                <input style="color:red;"type="number" id="red" placeholder="Red" min="0" max="255"/>
-                <input style="color:green;"type="number" id="green" placeholder="Green"  min="0" max="255"/>
-                <input style="color:blue;"type="number" id="blue" placeholder="Blue" min="0" max="255"/>
-            </form>
-            <button class="btn"id="submit-button" type="submit" pys-onClick="my_function">Submit</button>
-            <div style="font-size:47pt;" id="test-output"></div>
-
+            <div class="form">
+                <form>
+                    <a class="red"><input  type="number" id="red" placeholder="Red" min="0" max="255" /></a>
+                    <a class="green"><input  type="number" id="green" placeholder="Green" min="0" max="255" /></a>
+                    <a class="blue"><input  type="number" id="blue" placeholder="Blue" min="0" max="255" /></a>
+                </form>
+                <button class="btn" id="submit-button" type="submit" pys-onClick="my_function">Submit</button>
+                <div style="font-size:47pt;" id="test-output"></div>
+            </div>
         </div>
 
             <py-script>
-                from js import console
+
                 def bin_to_hex(n):
                     j=len(n)-1
                     i=1
@@ -101,12 +102,18 @@
                     red = int(Element('red').element.value)
                     green = int(Element('green').element.value)
                     blue = int(Element('blue').element.value)
-                    red = final(red)
-                    blue = final(blue)
-                    green = final(green)
-                    text = '#'+red+green+blue
-                    document.body.style.backgroundColor = text
-                    Element('test-output').element.innerText = text
+                    if red>255 or red< 0 or blue>255 or blue< 0 or green>255 or green< 0:
+                        Element('test-output').element.innerText = 'out of range(range:0~255)'
+                        document.body.style.backgroundColor = '#FFFFFF'
+                    else:
+                        red = final(red)
+                        blue = final(blue)
+                        green = final(green)
+                        text = '#'+red+green+blue
+                        document.body.style.backgroundColor = text
+                        Element('test-output').element.innerText = text
+
+
                     
 
             </py-script>
