@@ -31,7 +31,16 @@ body
     background-color: white;
     width:90px;
     margin-top:40px;
-
+.red{
+    color:red;
+    
+}
+.green{
+    color:green;
+}
+.blue{
+    color:blue;
+}
 }
 .red ::placeholder {
     color: red;
