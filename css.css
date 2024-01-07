@@ -33,3 +33,20 @@ body
     margin-top:40px;
 
 }
+.form{
+    background:black;
+    border-radius:25px;
+    width:300px;
+    padding:20px;
+}
+.red ::placeholder {
+    color: red;
+    opacity: 9;
+}
+.green ::placeholder {
+    color: green;
+}
+.blue ::placeholder {
+    color: blue;
+}
+
